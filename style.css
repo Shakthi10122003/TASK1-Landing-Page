@@ -1,0 +1,189 @@
+/* Universal Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styles - Includes Sticky Footer Logic */
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.6;
+
+  /* Sticky Footer Properties */
+  display: flex; /* Make body a flex container */
+  flex-direction: column; /* Arrange children in a column */
+  min-height: 100vh; /* Ensure body takes at least 100% of viewport height */
+}
+
+/* Main Content Area - Pushes Footer Down */
+main {
+  flex-grow: 1; /* Allows the main content area to expand and fill available space */
+}
+
+/* Container for Centering Content */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+/* Header */
+header {
+  background: #2e7d32; /* Dark Green */
+  padding: 1rem 0;
+  color: white;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo-img {
+  height: 70px;
+  width: auto; /* Maintain aspect ratio */
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: 600;
+}
+
+.logo-text span {
+  color: #a5d6a7; /* Light Green Accent */
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.5rem;
+  list-style: none; /* Remove bullet points from list items */
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none; /* Remove underline from links */
+  font-weight: 500;
+  transition: color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.nav-links a:hover {
+  color: #a5d6a7; /* Light Green Accent on hover */
+}
+
+.menu-toggle {
+  display: none; /* Hidden by default, shown on smaller screens */
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: white;
+}
+
+/* Hero Section (Specific to Home Page) */
+.hero {
+  /* Using a placeholder image - replace with your actual hero image */
+  background: url("logo.png") no-repeat center center/cover;
+  color: white;
+  height: 90vh; /* Takes 90% of viewport height */
+  display: flex;
+  align-items: center; /* Vertically center content */
+  justify-content: center; /* Horizontally center content */
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.cta-btn {
+  padding: 0.75rem 1.5rem;
+  background: #a5d6a7; /* Light Green Accent */
+  color: #1b5e20; /* Darker Green */
+  font-weight: bold;
+  border: none;
+  border-radius: 30px; /* Rounded button corners */
+  text-decoration: none;
+  transition: background 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #81c784; /* Slightly darker light green on hover */
+}
+
+/* Footer */
+footer {
+  background: #1b5e20; /* Very Dark Green */
+  color: white;
+  padding: 1rem 0;
+  margin-top: 2rem; /* Adds some space above the footer, if content is short */
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+}
+
+.social-links a {
+  margin-left: 1rem; /* Space between social icons */
+  font-size: 1.2rem;
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #a5d6a7; /* Light Green Accent on hover */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column; /* Stack nav links vertically */
+    display: none; /* Hide by default on small screens */
+    background: #2e7d32; /* Background for collapsed menu */
+    width: 100%;
+    position: absolute; /* Position relative to the body/viewport */
+    top: 70px; /* Adjust based on header height */
+    left: 0;
+    padding: 1rem 0;
+    z-index: 1000; /* Ensure menu is above other content */
+  }
+
+  .nav-links.active {
+    display: flex; /* Show menu when 'active' class is added by JS */
+  }
+
+  .menu-toggle {
+    display: block; /* Show hamburger icon */
+  }
+
+  .hero-content h1 {
+    font-size: 2rem; /* Adjust font size for smaller screens */
+  }
+
+  .footer-container {
+    flex-direction: column; /* Stack footer items vertically */
+    text-align: center;
+  }
+
+  .social-links {
+    margin-top: 1rem; /* Space between copyright and social links */
+  }
+}
