@@ -90,7 +90,7 @@ header {
 /* Hero Section (Specific to Home Page) */
 .hero {
   /* Using a placeholder image - replace with your actual hero image */
-  background: url('https://images.unsplash.com/photo-1508264165352-258db2ebd59b') no-repeat center center/cover;
+  background: url('logo.png') no-repeat center center/cover;
   color: white;
   height: 90vh; /* Takes 90% of viewport height */
   display: flex;
